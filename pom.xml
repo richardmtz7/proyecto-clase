@@ -8,5 +8,6 @@
   <modules>
   	<module>pruebas</module>
   	<module>app-web</module>
+  	<module>practicasemana4</module>
   </modules>
 </project> 
