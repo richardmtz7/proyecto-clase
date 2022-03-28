@@ -9,5 +9,7 @@
   	<module>pruebas</module>
   	<module>app-web</module>
   	<module>practicasemana4</module>
+  	<module>estudio</module>
+  	<module>practicaAdicionalSemana6</module>
   </modules>
 </project> 
