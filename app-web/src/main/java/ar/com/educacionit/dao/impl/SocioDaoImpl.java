@@ -1,32 +1,22 @@
 package ar.com.educacionit.dao.impl;
 
-import ar.com.educacionit.dao.ICrud;
+import ar.com.educacionit.dao.SociosDao;
+
 import ar.com.educacionit.domain.Socios;
 
-public class SocioDaoImpl implements ICrud {
+public class SocioDaoImpl implements SociosDao {
 	
 	//create
-	public  Socios create(Socios socio) {
+	public  Socios save(Socios socio) {
 		
+		String sql = "INSERT INTO SOCIOS(nombre,apellido,email,direccion) VALUES('carlos', 'lopez', 'krloss@gmail.com', 'av siempre viva 46')";
 		
+		System.out.println("Ejecutando sql:" + sql);
 		
-		String sql = "INSERT INTO SOCIOS(nombre, apellido, email, direccion) VALUES('richard', 'niño', 'richardmtz710@gmail.com', 'chapinero 52', 1l)";
-		
-		System.out.println("Ejecutando base de datos" + sql);
-		
-		return new Socios(10L,"richard", "niño", "richardmtz710@gmail.com", "chapinero 52", 1l);
+		return new Socios(10L, "carlos", "lopez", "krloss@gmail.com", "av siempre viva 46", 1l);
 			
-		
 	}
 	
-	//read por id
-
-	public Socios findById(Long id) {
-		
-		String sql = "SELECT * FROM SOCIOS WHERE ID = " +id;
-		System.out.println("Ejecutando sql:" + sql);
-		return new Socios(id,"richard", "niño", "richardmtz710@gmail.com", "chapinero 52", 1l);
-	}
 	
 	//search
 	public Socios[] findAll() {
@@ -40,6 +30,30 @@ public class SocioDaoImpl implements ICrud {
 		return new Socios[] {socio1,socio2,socio3};
 		
 	}
+	
+	
+	//read by id
+	public Socios getOne(Long id) {
+
+		String sql = "SELECT * FROM SOCIOS WHERE ID = " +id;
+		System.out.println("Ejecutando sql:" + sql);
+	
+		return new Socios(id,"richard", "niño", "richardmtz710@gmail.com", "chapinero 52", 1l);
+		
+	}
+
+	public void delete(Long id) {
+		String sql = "DELETE FROM socios WHERE id = " + id;
+		System.out.println(sql);
+	}
+
+	public void update(Socios entity) {
+		String sql = "UPDATE socios" + 
+		"SET direccion = '"+entity.getDireccion()+"', apellido = '"+entity.getApellido()+"+', paises_id = "+entity.getPaisIid()+"" +
+		"where id = 1";
+		System.out.println(sql);
+	}
+
 	
 
 }
