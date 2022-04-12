@@ -1,0 +1,58 @@
+Crear un branch con el nombre practica-adicional-semana7
+- modelar cliente, cheques, firmante, banco, sucursal..
+
+---------------------------
+    BANCO                 |
+---------------------------
+- id:  NUMBER (PK)        |
+- Nombre: VARCHAR(100)    |
+- Direccion: VARCHAR(100) | 
+- Codigo: VARCHAR(7)      |
+- Cant_Empleados: INT     |
+---------------------------
+
+--------------------------------
+	SUCURSAL                   |
+--------------------------------
+- id: NUMBER                   |
+- Banco_Id: NUMBER (FK)	       |
+- CIUDAD_SUCURSAL: VARCHAR(100)|
+- DIRECCION: VARCHAR(100)      |	       
+--------------------------------
+
+-----------------------------
+	CHEQUES                 |
+-----------------------------
+- BANCO_ID: VARCHAR(7) (FK) |
+- CLIENTE_ID: NUMBER (FK)   |
+-----------------------------
+
+-----------------------------------
+	CLIENTE                       |
+-----------------------------------
+- id: NUMBER (PK) AUTO_INCREMENT  |
+- NOMBRE: VARCHAR(100)            |
+- APELLIDO: VARCHAR(100)          |
+- TIPO_DNI: VARCHAR(50)           |
+- DNI: NUMBER (UNIQUE)            |
+- EMAIL: VARCHAR(100) (UNIQUE)    |
+- DIRECCION: VARCHAR(150)         |
+- TIPO:CUENTA: VARCHAR(100)       |
+- NRO_CUENTA: NUMBER  (UNIQUE)    |
+- CHEQUERA: CHAR(2)               |
+- CANT_FONDOS: NUMBER             |
+-----------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
