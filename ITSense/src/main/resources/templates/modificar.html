@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+<title>Agregar Articulo</title>
+</head>
+<body>
+	<h1>Datos</h1>
+	<a th:href="@{/}">Regresar</a>
+	<br/>
+	<form th:action="@{/guardar}" method="post" th:object="${articulo}">
+	<input type="hidden" name="idArticulo" th:field="*{idArticulo}">
+	
+		<br/>
+		<label for="titulo">Titulo:</label>
+		<input type="text" name="titulo" th:field="*{titulo}"/>	
+		<br/>
+		<label for="codigo">Codigo:</label>
+		<input type="number" name="codigo" th:field="*{codigo}"/>	
+		<br/>
+		<label for="stock">Stock:</label>
+		<input type="number" name="stock" th:field="*{stock}"/>	
+		<br/>
+		<input type="submit" name="guardar" value="guardar" />
+	</form>
+	
+	
+</body>
+</html>

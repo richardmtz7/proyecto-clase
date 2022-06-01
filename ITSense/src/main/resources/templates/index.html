@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Articulos</title>
+</head>
+<body>
+<h1>ITsense</h1>
+	<a th:href="@{/agregar}">Agregar Producto</a>
+	<br>
+	
+	<div th:if="${articulos != null and !articulos.empty}">
+		<table border=1>
+			<tr>
+				<th>Titulo</th>
+				<th>Codigo</th>
+				<th>Stock</th>
+				<th>Editar Articulo</th>
+				<th>Eliminar Articulo</th>
+			</tr>
+
+			<tr th:each="articulo : ${articulos}">
+				<td th:text="${articulo.titulo}">Mostrar Titulo</td>
+				<td th:text="${articulo.codigo}">Mostrar Codigo</td>
+				<td th:text="${articulo.stock}">Mostrar Stock</td>
+				<td> <a th:href="@{/editar/} + ${articulo.idArticulo}" th:text="Editar"></a></td>
+				<td> <a th:href="@{/eliminar/} + ${articulo.idArticulo}" th:text="Eliminar"></a></td>
+			</tr>
+
+		</table>
+	</div>
+	<div th:if="${articulos == null or articulos.empty}">La lista está
+		vacía</div>
+
+
+</body>
+</html>
